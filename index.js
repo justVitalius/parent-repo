@@ -1,3 +1,4 @@
-var submodule = require('./submodule-repo/submodule');
+var submodules = require('./submodule-repo/submodule');
 
-console.log(submodule());
+console.log(submodules.say());
+console.log(submodules.sum(1, 2));
