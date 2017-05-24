@@ -1,0 +1,25 @@
+{  
+    "description": "Запрос на сервер startFlow#init",
+    "type": "object",
+    "properties": {
+        "selectedId": {
+            "description": "какой-то выбранный id",
+            "type": "string"
+        },
+        "email": {
+            "description": "имейл",
+            "type": "string"
+        },
+        "dulTypes": {
+            "description": "Список выбранных ДУЛ",
+            "$ref": "#/definitions/dulTypes"
+        }
+    },
+    "required": ["selectedId", "email"],
+    "definitions": {
+        "dulTypes": { 
+            "type": "array", 
+            "items": { "type": "string" }
+        }
+    }
+}

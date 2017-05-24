@@ -1,14 +1,17 @@
-{
-    
-    "description": "Запрос workflow repcredentialcheck#stateName",
+{  
+    "description": "Ответ сервера на startFlow#init",
     "type": "object",
     "properties": {
         "fullName": {
             "description": "Имя идентифицированного ФЛ",
             "type": "string"
         },
-        "corpClientName": { "type": "string" },
+        "corpClientName": { 
+            "description": "Имя идентифицированного ЮЛ",
+            "type": "string" 
+        },
         "procDocType": { 
+            "description": "Список документов для установки полномочий",
             "$ref": "#/definitions/procDocType"
         }
     },
