@@ -1,13 +1,15 @@
 var payload = require('../payload');
-var schemaRq = require('../schemas/startFlow_init_rq.json');
+
+var getSchema = require('../../submodule-repo/jsonable');
+var schemaRq = getSchema('repcredentialcheck', 'testPage', 'stateName', 'rq');
 
 var Ajv = require('ajv');
 var ajv = new Ajv(); 
 var validateRq = ajv.compile(schemaRq);
 
-describe('startFlow#init state', () => {
+describe('repcredentialcheck -> testPage#stateName', () => {
     describe('Rq, client -> server', () => {
-        describe('соответствует schema json', () => {
+        describe('payload() генерирует запрос соответствующий schema json', () => {
             it('Передан полный набор корректных параметров', () => {
                 const report = validateRq(
                     payload('1', '1', ['1', '2'])
