@@ -1,5 +1,6 @@
 var jsf = require('json-schema-faker');
-var rq = require('./rq.json');
+var getSchema = require('./submodule-repo/jsonable');
+var rq = getSchema('repcredentialcheck', 'testPage', 'stateName', 'rs');
 var _ = require('lodash');
 
 console.log(JSON.stringify(rq, null, 2));
@@ -24,10 +25,10 @@ var sample = jsf(
 console.log(JSON.stringify(sample, null, 2));
 
 
-var Ajv = require('ajv');
-var ajv = new Ajv(); // options can be passed, e.g. {allErrors: true}
-var validate = ajv.compile(rq);
-var report = validate(sample);
+// var Ajv = require('ajv');
+// var ajv = new Ajv(); // options can be passed, e.g. {allErrors: true}
+// var validate = ajv.compile(rq);
+// var report = validate(sample);
 
-console.log('=============================');
-console.log(report);
+// console.log('=============================');
+// console.log(report);
